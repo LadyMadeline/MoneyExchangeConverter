@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a href="/">Домой</a>
+                <a href="@Url.Action("get", "history")">История</a>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+</body>
+</html>

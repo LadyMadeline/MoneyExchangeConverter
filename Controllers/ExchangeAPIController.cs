@@ -15,11 +15,11 @@ using MoneyExchangeConverter.Data;
 namespace MoneyExchangeConverter.Controllers
 {
     [ApiController]
-    public class CurrencyController : ControllerBase
+    public class ExchangeAPIController : ControllerBase
     {
         public ExchangeRateAPIService ExchRateService { get; set; }
 
-        public CurrencyController(ExchangeContext context)
+        public ExchangeAPIController(ExchangeContext context)
         {
             this.ExchRateService = new ExchangeRateAPIService(context);
         }
@@ -32,17 +32,17 @@ namespace MoneyExchangeConverter.Controllers
             return convertedSum;
         }
 
-        [HttpGet("/history/get")]
-        public List<ExchangeRequest> GetHistory()
-        {
-            List<ExchangeRequest> history = ExchRateService.GetHistoryStorage();
-            return history;
-        }
+        //[HttpGet("/history/get")]
+        //public List<ExchangeRequest> GetHistory()
+        //{
+        //    List<ExchangeRequest> history = ExchRateService.GetHistoryStorage();
+        //    return history;
+        //}
 
-        [HttpGet("/history/clean")]
-        public void CleanHistory()
-        {
-            ExchRateService.CleanHistoryStorage();
-        }
+        //[HttpGet("/history/clean")]
+        //public void CleanHistory()
+        //{
+        //    ExchRateService.CleanHistoryStorage();
+        //}
     }
 }

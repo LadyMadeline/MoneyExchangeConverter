@@ -29,11 +29,12 @@ namespace MoneyExchangeConverter
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "MoneyExchangeConverter", Version = "v1" });
-            });
+            services.AddMvc();
+            //services.AddControllers();
+            //services.AddSwaggerGen(c =>
+            //{
+            //    c.SwaggerDoc("v1", new OpenApiInfo { Title = "MoneyExchangeConverter", Version = "v1" });
+            //});
 
             services.AddDbContext<ExchangeContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("ExchangeContext")));
@@ -43,11 +44,13 @@ namespace MoneyExchangeConverter
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseDeveloperExceptionPage();
-            app.UseSwagger();
-            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MoneyExchangeConverter v1"));
+            //app.UseSwagger();
+            //app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MoneyExchangeConverter v1"));
 
 
             app.UseHttpsRedirection();
+
+            app.UseStaticFiles();
 
             app.UseRouting();
 
@@ -55,7 +58,9 @@ namespace MoneyExchangeConverter
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
