@@ -3,12 +3,16 @@
 }
 <!doctype html>
 <html>
-<h1>Конвертация</h1>
+<head>
+    <meta charset="utf-8">
+    <title>Конвертация</title>
+</head>
+<h2>Конвертация</h2>
 <body>
     <form method="post">
         <p>
             <label for="fromAmount">Введите число:</label>
-            <input type="number" min="0" name="fromAmount" value="@ViewData["fromAmount"]" required/>
+            <input type="number" min="0" name="fromAmount" value="@ViewData["fromAmount"]" required />
             <label for="fromCurrency">Выберите валюту:</label>
             <select name="fromCurrency" required>
                 <option>USD</option>
@@ -43,9 +47,6 @@
                 <option>KRW</option>
                 <option>MYR</option>
             </select>
-
-        </p>
-        <p>
             <label for="toAmount">Результат:</label>
             <input type="number" name="toAmount" value="@ViewData["toAmount"]" readonly />
             <label for="toCurrency">Выберите валюту:</label>
