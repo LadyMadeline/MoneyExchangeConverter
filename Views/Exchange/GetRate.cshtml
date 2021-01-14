@@ -11,9 +11,8 @@
 <body>
     <form method="post">
         <p>
-            <label for="fromAmount">Введите число:</label>
+            <sup><label for="fromAmount">Введите число<br></label></sup>
             <input type="number" min="0" name="fromAmount" value="@ViewData["fromAmount"]" required />
-            <label for="fromCurrency">Выберите валюту:</label>
             <select name="fromCurrency" required>
                 <option>USD</option>
                 <option>EUR</option>
@@ -46,10 +45,9 @@
                 <option>GBP</option>
                 <option>KRW</option>
                 <option>MYR</option>
-            </select>
-            <label for="toAmount">Результат:</label>
+            </select><br>
+            <sup><br><label for="toAmount">Результат</label></sup><br>
             <input type="number" name="toAmount" value="@ViewData["toAmount"]" readonly />
-            <label for="toCurrency">Выберите валюту:</label>
             <select name="toCurrency" required>
                 <option>USD</option>
                 <option>EUR</option>
