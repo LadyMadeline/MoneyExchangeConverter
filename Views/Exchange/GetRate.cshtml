@@ -11,7 +11,7 @@
 <body>
     <form method="post">
         <p>
-            <sup><label for="fromAmount">Введите сумму<br></label></sup>
+            <label for="fromAmount">Введите сумму</label>
             <input type="number" min="0" name="fromAmount" value="@ViewData["fromAmount"]" required />
             <select name="fromCurrency" required>
                 <option>USD</option>
@@ -45,8 +45,8 @@
                 <option>GBP</option>
                 <option>KRW</option>
                 <option>MYR</option>
-            </select><br>
-            <sup><br><label for="toAmount">Результат</label></sup><br>
+            </select>
+            <label for="toAmount">Результат</label>
             <input type="number" name="toAmount" value="@ViewData["toAmount"]" readonly />
             <select name="toCurrency" required>
                 <option>USD</option>
@@ -86,5 +86,6 @@
             <input type="submit" value="Конвертировать" />
         </p>
     </form>
+
 </body>
 </html>
