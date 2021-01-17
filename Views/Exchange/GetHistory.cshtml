@@ -1,4 +1,5 @@
-﻿@model IEnumerable<MoneyExchangeConverter.Models.ExchangeRequest>
+﻿<!DOCTYPE html>
+@model IEnumerable<MoneyExchangeConverter.Models.ExchangeRequest>
 
 @{
     Layout = "_Layout";
@@ -8,63 +9,78 @@
     ViewData["Title"] = "История";
 }
 
-<h1>История</h1>
-
-@if (!Model.Any())
-{
-    <p>В истории нет записей</p>
-}
-
-else
-{
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.FromCurrency)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.FromAmount)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.ToCorrency)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.ToAmount)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Date)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>История</title>
+</head>
+<body>
+    <main role="main">
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1>История конвертаций</h1><br />
+            </div>
+            @if (!Model.Any())
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.FromCurrency)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.FromAmount)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ToCorrency)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ToAmount)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Date)
-                    </td>
-                </tr>
+                <p>В истории нет записей</p>
             }
-        </tbody>
-    </table>
 
-    <p>
-        <input type="button" value="Очистить" onclick="location.href='@Url.Action("clean", "history")'" />
-    </p>
-}
-
-
+            else
+            {
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table class="table table-bordered table-sm table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.FromCurrency)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.FromAmount)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.ToCorrency)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.ToAmount)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Date)
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                     {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.FromCurrency)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.FromAmount)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ToCorrency)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ToAmount)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Date)
+                                            </td>
+                                        </tr>
+                                     }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    <input class="btn btn-primary my-2" type="button" value="Очистить историю" onclick="location.href='@Url.Action("clean", "history")'" />
+                </p>
+            }
+        </section>
+    </main>
+</body>
+</html>

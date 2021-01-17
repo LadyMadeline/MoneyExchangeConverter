@@ -3,89 +3,94 @@
 }
 <!doctype html>
 <html>
-<h1>Конвертация</h1>
+<head>
+    <meta charset="utf-8">
+    <title>Конвертация</title>
+</head>
 <body>
-    <form method="post">
-        <p>
-            <label for="fromAmount">Введите число:</label>
-            <input type="number" min="0" name="fromAmount" value="@ViewData["fromAmount"]" required/>
-            <label for="fromCurrency">Выберите валюту:</label>
-            <select name="fromCurrency" required>
-                <option>USD</option>
-                <option>EUR</option>
-                <option>RUB</option>
-                <option>CAD</option>
-                <option>HKD</option>
-                <option>ISK</option>
-                <option>PHP</option>
-                <option>DKK</option>
-                <option>HUF</option>
-                <option>AUD</option>
-                <option>RON</option>
-                <option>SEK</option>
-                <option>IDR</option>
-                <option>INR</option>
-                <option>BRL</option>
-                <option>JPY</option>
-                <option>THB</option>
-                <option>CHF</option>
-                <option>SGD</option>
-                <option>PLN</option>
-                <option>BGN</option>
-                <option>TRY</option>
-                <option>CNY</option>
-                <option>NOK</option>
-                <option>NZD</option>
-                <option>ZAR</option>
-                <option>MXN</option>
-                <option>ILS</option>
-                <option>GBP</option>
-                <option>KRW</option>
-                <option>MYR</option>
-            </select>
-
-        </p>
-        <p>
-            <label for="toAmount">Результат:</label>
-            <input type="number" name="toAmount" value="@ViewData["toAmount"]" readonly />
-            <label for="toCurrency">Выберите валюту:</label>
-            <select name="toCurrency" required>
-                <option>USD</option>
-                <option>EUR</option>
-                <option>RUB</option>
-                <option>CAD</option>
-                <option>HKD</option>
-                <option>ISK</option>
-                <option>PHP</option>
-                <option>DKK</option>
-                <option>HUF</option>
-                <option>AUD</option>
-                <option>RON</option>
-                <option>SEK</option>
-                <option>IDR</option>
-                <option>INR</option>
-                <option>BRL</option>
-                <option>JPY</option>
-                <option>THB</option>
-                <option>CHF</option>
-                <option>SGD</option>
-                <option>PLN</option>
-                <option>BGN</option>
-                <option>TRY</option>
-                <option>CNY</option>
-                <option>NOK</option>
-                <option>NZD</option>
-                <option>ZAR</option>
-                <option>MXN</option>
-                <option>ILS</option>
-                <option>GBP</option>
-                <option>KRW</option>
-                <option>MYR</option>
-            </select>
-        </p>
-        <p>
-            <input type="submit" value="Конвертировать" />
-        </p>
     </form>
+    <main role="main">
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1>Конвертация</h1><br />
+                <form method="post">
+                    <p>
+                        <label for="fromAmount">Введите сумму</label>
+                        <input type="number" min="0" name="fromAmount" value="@ViewData["fromAmount"]" required />
+                        <select name="fromCurrency" required>
+                            <option>USD</option>
+                            <option>EUR</option>
+                            <option>RUB</option>
+                            <option>CAD</option>
+                            <option>HKD</option>
+                            <option>ISK</option>
+                            <option>PHP</option>
+                            <option>DKK</option>
+                            <option>HUF</option>
+                            <option>AUD</option>
+                            <option>RON</option>
+                            <option>SEK</option>
+                            <option>IDR</option>
+                            <option>INR</option>
+                            <option>BRL</option>
+                            <option>JPY</option>
+                            <option>THB</option>
+                            <option>CHF</option>
+                            <option>SGD</option>
+                            <option>PLN</option>
+                            <option>BGN</option>
+                            <option>TRY</option>
+                            <option>CNY</option>
+                            <option>NOK</option>
+                            <option>NZD</option>
+                            <option>ZAR</option>
+                            <option>MXN</option>
+                            <option>ILS</option>
+                            <option>GBP</option>
+                            <option>KRW</option>
+                            <option>MYR</option>
+                        </select><br /><br />
+                        <label for="toAmount">Результат</label>
+                        <input type="number" name="toAmount" value="@ViewData["toAmount"]" readonly />
+                        <select name="toCurrency" required>
+                            <option>USD</option>
+                            <option>EUR</option>
+                            <option>RUB</option>
+                            <option>CAD</option>
+                            <option>HKD</option>
+                            <option>ISK</option>
+                            <option>PHP</option>
+                            <option>DKK</option>
+                            <option>HUF</option>
+                            <option>AUD</option>
+                            <option>RON</option>
+                            <option>SEK</option>
+                            <option>IDR</option>
+                            <option>INR</option>
+                            <option>BRL</option>
+                            <option>JPY</option>
+                            <option>THB</option>
+                            <option>CHF</option>
+                            <option>SGD</option>
+                            <option>PLN</option>
+                            <option>BGN</option>
+                            <option>TRY</option>
+                            <option>CNY</option>
+                            <option>NOK</option>
+                            <option>NZD</option>
+                            <option>ZAR</option>
+                            <option>MXN</option>
+                            <option>ILS</option>
+                            <option>GBP</option>
+                            <option>KRW</option>
+                            <option>MYR</option>
+                        </select>
+                    </p>
+                    <p>
+                        <input class="btn btn-primary my-2" type="submit" value="Конвертировать" />
+                    </p>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
